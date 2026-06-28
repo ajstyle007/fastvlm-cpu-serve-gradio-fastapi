@@ -1,9 +1,15 @@
 # FastVLM CPU Serve — Gradio + FastAPI
 
+<img width="1885" height="950" alt="Screenshot 2026-06-28 180204" src="https://github.com/user-attachments/assets/ecc9e5d7-be12-42ed-ba60-b374c0231c17" />
+
+
 This repository contains the CPU deployment code for FastVLM with two variants:
 
 - `fastvlm-cpu-serve_1024` — higher-quality image encoder at 1024×1024 resolution
 - `fastvlm-cpu-serve_512` — faster image encoder at 512×512 resolution
+
+- For 512 resolution: https://musk12-fastvlm-cpu-inference-demo.hf.space
+- For 1024 resolution: https://musk12-fastvlm-fast-inference-on-cpu.hf.space
 
 Both folders provide a complete Gradio frontend + FastAPI backend deployment, including voice, camera, and text-based multimodal interfaces.
 
@@ -31,6 +37,9 @@ Both folders provide a complete Gradio frontend + FastAPI backend deployment, in
 - Best for low-latency CPU inference
 
 ## Multimodal capabilities
+
+<img width="1857" height="1036" alt="Screenshot 2026-06-28 175821" src="https://github.com/user-attachments/assets/0b8a76a7-2c0e-4d07-9a9d-583c530facb6" />
+
 
 These deployments support:
 
@@ -137,6 +146,8 @@ curl -X POST "http://127.0.0.1:8000/predict" \
 - The backend writes image embeddings to a temporary `.bin` file and sends it to `fastvlm_server`.
 - `fastvlm_server` returns streamed output tokens until the `---END---` sentinel.
 - This design avoids reloading the LLM for every request.
+
+<img width="1860" height="1062" alt="Screenshot 2026-06-28 175909" src="https://github.com/user-attachments/assets/d2c88fcf-b3aa-4596-ad61-71580e8bf198" />
 
 ## Hugging Face deployment
 
